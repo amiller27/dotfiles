@@ -18,10 +18,10 @@
     url: https://git.io/fisher
     dest: ~/.config/fish/functions/fisher.fish
 
-- command: fish -c 'fisher add edc/bass'
-- command: fish -c 'fisher add amiller27/theme-bobthefish'
-- command: fish -c 'fisher add amiller27/fish_logo'
-- command: fish -c 'fisher add laughedelic/pisces'
+- command: fish -c 'fisher install edc/bass'
+- command: fish -c 'fisher install amiller27/theme-bobthefish'
+- command: fish -c 'fisher install amiller27/fish_logo'
+- command: fish -c 'fisher install laughedelic/pisces'
 
 - user:
     name: "{{ lookup('env', 'USER') }}"

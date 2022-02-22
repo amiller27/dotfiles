@@ -117,26 +117,26 @@ if ! shopt -oq posix; then
 fi
 
 # enable powerline
-function test_unicode {
-  echo -ne "\xe2\x88\xb4\033[6n\033[1K\r"
-  read -d R foo
-  echo -ne "\033[1K\r"
-  echo -e "${foo}" | cut -d \[ -f 2 | cut -d";" -f 2 | (
-    read UNICODE
-    [ $UNICODE -eq 2 ] && return 0
-    [ $UNICODE -ne 2 ] && return 1
-  )
-}
+# function test_unicode {
+#   echo -ne "\xe2\x88\xb4\033[6n\033[1K\r"
+#   read -d R foo
+#   echo -ne "\033[1K\r"
+#   echo -e "${foo}" | cut -d \[ -f 2 | cut -d";" -f 2 | (
+#     read UNICODE
+#     [ $UNICODE -eq 2 ] && return 0
+#     [ $UNICODE -ne 2 ] && return 1
+#   )
+# }
 
-if [ "$TERM" != "screen" ] && test_unicode; then
-    export LANG=en_US.UTF-8
-    #powerline-daemon -q # ${POWERLINE_COMMAND_ARGS}
-    export PYTHON_VERSION=3.6
-    export POWERLINE_BASH_CONTINUATION=1
-    export POWERLINE_BASH_SELECT=1
-    export POWERLINE_COMMAND=powerline
-    . /usr/local/lib/python${PYTHON_VERSION}/dist-packages/powerline/bindings/bash/powerline.sh
-    unset PYTHON_VERSION
-fi
+# if [ "$TERM" != "screen" ] && test_unicode; then
+#     export LANG=en_US.UTF-8
+#     #powerline-daemon -q # ${POWERLINE_COMMAND_ARGS}
+#     export PYTHON_VERSION=3.6
+#     export POWERLINE_BASH_CONTINUATION=1
+#     export POWERLINE_BASH_SELECT=1
+#     export POWERLINE_COMMAND=powerline
+#     . /usr/local/lib/python${PYTHON_VERSION}/dist-packages/powerline/bindings/bash/powerline.sh
+#     unset PYTHON_VERSION
+# fi
 
 unset test_unicode
