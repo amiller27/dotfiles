@@ -144,6 +144,8 @@ set -g theme_display_git_staged_verbose yes
 set -g theme_display_git_untracked_verbose yes
 set -g theme_nerd_fonts yes
 set -g theme_date_format "+%X %Z"
+# This is real slow
+set -g theme_display_ruby no
 
 function fish_greeting; end
 
