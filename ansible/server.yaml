@@ -7,6 +7,7 @@
       apt_repository:
         state: present
         repo: ppa:jonathonf/vim
+      become: true
     - include: tasks/packages_from_file.yaml
       vars:
         filename: tools-full
@@ -14,6 +15,6 @@
       vars:
         filename: server
     - include_tasks: tasks/fish.yaml
-    - include_tasks: tasks/grive.yaml
+    # - include_tasks: tasks/grive.yaml
     - name: Install Docker
       include_tasks: tasks/docker.yaml
